@@ -36,7 +36,7 @@ sites = [
 
 def notify(title, url):
     print(datetime.now(), title, url)
-    sc = SlackClient(token='xoxp-10271833552-11748094979-290267953831-06a1568fcfafcba3594d686983fd1a54')
+    sc = SlackClient(os.environ["SLACK_API_TOKEN"])
     sc.api_call(
         'chat.postMessage',
         channel='D19U7HANA',
